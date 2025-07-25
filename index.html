@@ -6,9 +6,10 @@
     <title>Farhan Galib - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
         html { scroll-behavior: smooth; }
         .sidebar-enter-active, .sidebar-leave-active {
             transition: transform 0.3s ease-out;
@@ -18,148 +19,165 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-950 to-gray-950 text-gray-200 font-poppins min-h-screen flex flex-col overflow-x-hidden">
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col overflow-x-hidden">
 
-    <header class="bg-gray-900 bg-opacity-70 backdrop-blur-sm shadow-xl p-4 md:p-6 sticky top-0 z-50">
+    <header class="bg-white shadow-lg p-4 md:p-6 sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto flex items-center justify-between flex-wrap">
-            <a href="#hero" class="text-4xl font-extrabold text-teal-400 hover:text-teal-300 transition duration-300">Farhan Galib</a>
+            <a href="#hero" class="text-3xl md:text-4xl font-extrabold text-blue-700 hover:text-blue-500 transition duration-300">Farhan Galib</a>
             
             <!-- Desktop Navigation -->
             <nav id="desktop-nav" class="hidden md:flex text-lg font-semibold">
                 <ul class="flex space-x-6">
-                    <li><a href="#about" class="text-gray-200 hover:text-teal-400 transition duration-300">About</a></li>
-                    <li><a href="#skills" class="text-gray-200 hover:text-teal-400 transition duration-300">Skills</a></li>
-                    <li><a href="#education" class="text-gray-200 hover:text-teal-400 transition duration-300">Education</a></li>
-                    <li><a href="#experience" class="text-gray-200 hover:text-teal-400 transition duration-300">Experience</a></li>
-                    <li><a href="#projects" class="text-gray-200 hover:text-teal-400 transition duration-300">Projects</a></li>
+                    <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition duration-300">About</a></li>
+                    <li><a href="#skills" class="text-gray-700 hover:text-blue-600 transition duration-300">Skills</a></li>
+                    <li><a href="#education" class="text-gray-700 hover:text-blue-600 transition duration-300">Education</a></li>
+                    <li><a href="#experience" class="text-gray-700 hover:text-blue-600 transition duration-300">Experience</a></li>
+                    <li><a href="#projects" class="text-gray-700 hover:text-blue-600 transition duration-300">Projects</a></li>
                 </ul>
             </nav>
 
             <!-- Mobile Menu Button (Hamburger Icon) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-200 hover:text-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500 rounded-md p-2">
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md p-2">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
     </header>
 
     <!-- Mobile Sidebar -->
-    <div id="mobile-sidebar" class="fixed top-0 left-0 w-64 h-full bg-gray-900 bg-opacity-95 shadow-xl transform -translate-x-full md:hidden z-50 transition-transform duration-300 ease-in-out">
-        <div class="p-6 flex justify-between items-center border-b border-gray-700">
-            <h2 class="text-2xl font-bold text-teal-400">Menu</h2>
-            <button id="close-sidebar-button" class="text-gray-200 hover:text-teal-400 focus:outline-none">
+    <div id="mobile-sidebar" class="fixed top-0 left-0 w-64 h-full bg-blue-800 shadow-xl transform -translate-x-full md:hidden z-50 transition-transform duration-300 ease-in-out">
+        <div class="p-6 flex justify-between items-center border-b border-blue-700">
+            <h2 class="text-2xl font-bold text-white">Menu</h2>
+            <button id="close-sidebar-button" class="text-gray-200 hover:text-white focus:outline-none">
                 <i class="fas fa-times text-2xl"></i>
             </button>
         </div>
         <nav class="flex flex-col p-6 space-y-4 text-xl font-semibold">
-            <a href="#about" class="text-gray-200 hover:text-teal-400 transition duration-300 block py-2">About</a>
-            <a href="#skills" class="text-gray-200 hover:text-teal-400 transition duration-300 block py-2">Skills</a>
-            <a href="#education" class="text-gray-200 hover:text-teal-400 transition duration-300 block py-2">Education</a>
-            <a href="#experience" class="text-gray-200 hover:text-teal-400 transition duration-300 block py-2">Experience</a>
-            <a href="#projects" class="text-gray-200 hover:text-teal-400 transition duration-300 block py-2">Projects</a>
+            <a href="#about" class="text-gray-200 hover:text-white transition duration-300 block py-2">About</a>
+            <a href="#skills" class="text-gray-200 hover:text-white transition duration-300 block py-2">Skills</a>
+            <a href="#education" class="text-gray-200 hover:text-white transition duration-300 block py-2">Education</a>
+            <a href="#experience" class="text-gray-200 hover:text-white transition duration-300 block py-2">Experience</a>
+            <a href="#projects" class="text-gray-200 hover:text-white transition duration-300 block py-2">Projects</a>
         </nav>
     </div>
 
     <!-- Overlay for Sidebar -->
     <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden md:hidden z-40"></div>
 
-    <main class="container mx-auto px-6 py-12 flex-grow">
+    <main class="flex-grow">
         <!-- Hero Section -->
-        <section id="hero" class="flex flex-col md:flex-row items-center justify-center text-center md:text-left min-h-[calc(100vh-8rem)] py-10 animation-fade-in">
-            <div class="md:w-1/2 mb-8 md:mb-0">
-                <img src="./images/profile_photo.jpg" alt="Farhan Galib" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-teal-500 shadow-2xl mx-auto md:mx-0 transform hover:scale-105 transition duration-300">
+        <section id="hero" class="relative bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20 md:py-24 lg:py-32 flex items-center justify-center min-h-[60vh]">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in-right">
+                    <img src="./images/profile_photo.jpg" alt="Farhan Galib" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-2xl mx-auto md:mx-0 transform hover:scale-105 transition duration-300">
+                </div>
+                <div class="md:w-1/2 md:pl-12 animate-fade-in-left">
+                    <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg">Hello, I'm <span class="text-yellow-300">Farhan!</span></h1>
+                    <p class="text-xl md:text-2xl text-gray-200 mb-6">A Passionate <span class="font-bold text-yellow-200">Frontend Engineer</span></p>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-lg mb-8">I build responsive, high-performance web applications that bring ideas to life. With 3+ years of experience in modern JavaScript frameworks, I love crafting intuitive and fast user experiences.</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="mailto:fgalib021297@gmail.com" class="bg-yellow-400 text-blue-900 px-6 py-3 rounded-full text-lg font-semibold hover:bg-yellow-500 transition duration-300 flex items-center shadow-md"><i class="fas fa-envelope mr-2"></i> Email Me</a>
+                        <a href="./docs/FarhanGalib_Resume.pdf" target="_blank" class="bg-blue-800 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-900 transition duration-300 flex items-center shadow-md"><i class="fas fa-file-pdf mr-2"></i> View CV</a>
+                        <a href="./docs/FarhanGalib_Resume.pdf" download="FarhanGalib_Resume.pdf" class="bg-green-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-green-600 transition duration-300 flex items-center shadow-md"><i class="fas fa-download mr-2"></i> Download CV</a>
+                    </div>
+                </div>
             </div>
-            <div class="md:w-1/2 md:pl-12">
-                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-white mb-4">Hi, I'm <span class="text-teal-400">Farhan Galib</span></h1>
-                <p class="text-2xl md:text-3xl text-gray-300 mb-6">Software Engineer (Frontend)</p>
-                <p class="text-lg md:text-xl text-gray-400 max-w-lg mb-8">Passionate frontend engineer with 3+ years of experience building responsive, high-performance web applications. Skilled in React.js, Vue.js, and Next.js, I excel at creating intuitive UIs and optimizing for accessibility and speed.</p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="mailto:fgalib021297@gmail.com" class="bg-teal-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-teal-700 transition duration-300 flex items-center"><i class="fas fa-envelope mr-2"></i> Email Me</a>
-                    <a href="./docs/FarhanGalib_Resume.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300 flex items-center"><i class="fas fa-file-pdf mr-2"></i> View CV</a>
-                    <a href="./docs/FarhanGalib_Resume.pdf" download="FarhanGalib_Resume.pdf" class="bg-emerald-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-emerald-700 transition duration-300 flex items-center"><i class="fas fa-download mr-2"></i> Download CV</a>
-                    <a href="https://www.linkedin.com/in/farhan-galib-05a4891b3" target="_blank" class="bg-gray-700 text-gray-200 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-600 transition duration-300 flex items-center"><i class="fab fa-linkedin mr-2"></i> LinkedIn</a>
-                    <a href="https://github.com/FarhanGalib" target="_blank" class="bg-gray-700 text-gray-200 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-600 transition duration-300 flex items-center"><i class="fab fa-github mr-2"></i> GitHub</a>
+        </section>
+
+        <!-- About Section - now part of Hero text, but can be expanded here if needed -->
+        <section id="about" class="container mx-auto px-6 py-16">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-12">A Bit About Me</h2>
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-blue-500 transform hover:scale-[1.01] transition duration-300 ease-in-out">
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">My journey as a frontend engineer began 3 years ago, driven by a passion for creating intuitive and visually stunning web experiences. I thrive on translating complex ideas into elegant, user-friendly interfaces.</p>
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed">I specialize in modern JavaScript frameworks like React.js, Vue.js, and Next.js, always focusing on writing clean, maintainable code. My goal is to build applications that are not only performant and accessible but also a joy to use.</p>
+                <div class="flex flex-wrap justify-center gap-6 mt-10">
+                    <a href="https://www.linkedin.com/in/farhan-galib-05a4891b3" target="_blank" class="text-gray-700 hover:text-blue-600 transition duration-300 flex items-center text-lg font-medium">
+                        <i class="fab fa-linkedin mr-2 text-2xl"></i> LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/FarhanGalib" target="_blank" class="text-gray-700 hover:text-blue-600 transition duration-300 flex items-center text-lg font-medium">
+                        <i class="fab fa-github mr-2 text-2xl"></i> GitHub Repositories
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Technical Skills Section -->
-        <section id="skills" class="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-teal-700 transform hover:scale-[1.01] transition duration-300 ease-in-out animation-slide-up">
-            <h2 class="text-4xl font-bold text-teal-400 mb-10 text-center">Technical Skills</h2>
+        <section id="skills" class="container mx-auto px-6 py-16">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-12">My Technical Stack</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-teal-500 transform hover:scale-[1.02] transition duration-300">
-                    <h3 class="font-extrabold text-2xl text-white mb-4 flex items-center"><i class="fas fa-star text-yellow-400 mr-3"></i>Expertise</h3>
-                    <ul class="space-y-2 text-lg text-gray-300">
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>HTML5, CSS3, JavaScript, TypeScript, ES6</li>
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>React.js, Vue.js, Next.js</li>
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>React Query, React Hook Form, Redux, React Signal</li>
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Bootstrap, Chakra UI, Tailwind CSS</li>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:border-blue-400 transform hover:scale-[1.02] transition duration-300">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-4 flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i>Core Expertise</h3>
+                    <ul class="space-y-2 text-lg text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>HTML5, CSS3, JavaScript, TypeScript, ES6</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>React.js, Vue.js, Next.js</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>React Query, React Hook Form, Redux, React Signal</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Bootstrap, Chakra UI, Tailwind CSS</li>
                     </ul>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-teal-500 transform hover:scale-[1.02] transition duration-300">
-                    <h3 class="font-extrabold text-2xl text-white mb-4 flex items-center"><i class="fas fa-thumbs-up text-blue-400 mr-3"></i>Comfortable</h3>
-                    <ul class="space-y-2 text-lg text-gray-300">
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Redux Toolkit, Styled Components, CSS Modules</li>
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>React Leaflet, React Flow, Swiper</li>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:border-blue-400 transform hover:scale-[1.02] transition duration-300">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-4 flex items-center"><i class="fas fa-layer-group text-blue-500 mr-3"></i>Comfortable With</h3>
+                    <ul class="space-y-2 text-lg text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Redux Toolkit, Styled Components, CSS Modules</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>React Leaflet, React Flow, Swiper</li>
                     </ul>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-teal-500 transform hover:scale-[1.02] transition duration-300">
-                    <h3 class="font-extrabold text-2xl text-white mb-4 flex items-center"><i class="fas fa-lightbulb text-teal-400 mr-3"></i>Familiar</h3>
-                    <ul class="space-y-2 text-lg text-gray-300">
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Material-UI</li>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:border-blue-400 transform hover:scale-[1.02] transition duration-300">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-4 flex items-center"><i class="fas fa-book-open text-purple-500 mr-3"></i>Familiarity</h3>
+                    <ul class="space-y-2 text-lg text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Material-UI</li>
                     </ul>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-teal-500 transform hover:scale-[1.02] transition duration-300 col-span-1 md:col-span-2 lg:col-span-3">
-                    <h3 class="font-extrabold text-2xl text-white mb-4 flex items-center"><i class="fas fa-tools text-gray-400 mr-3"></i>Dev Tools</h3>
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-2 text-lg text-gray-300">
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Git, GitHub, GitLab, Chrome Dev Tools, VSCode</li>
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>NPM, Yarn, Heroku, Netlify, Slack, Jira</li>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:border-blue-400 transform hover:scale-[1.02] transition duration-300 col-span-1 md:col-span-2 lg:col-span-3">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-4 flex items-center"><i class="fas fa-wrench text-gray-600 mr-3"></i>Development Tools</h3>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-2 text-lg text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Git, GitHub, GitLab, Chrome Dev Tools, VSCode</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>NPM, Yarn, Heroku, Netlify, Slack, Jira</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-teal-700 transform hover:scale-[1.01] transition duration-300 ease-in-out animation-slide-up">
-            <h2 class="text-4xl font-bold text-teal-400 mb-10 text-center">Education</h2>
-            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-teal-500 transform hover:scale-[1.02] transition duration-300">
-                <h3 class="font-extrabold text-2xl text-white">Bangladesh University of Business and Technology (BUBT)</h3>
-                <p class="text-gray-300 text-lg">Mirpur 02, Dhaka</p>
-                <p class="font-semibold text-xl text-teal-300 mt-2">B.Sc. in Computer Science and Engineering (CSE)</p>
-                <p class="text-gray-400 text-base">June 2017 – August 2021</p>
-                <p class="text-gray-400 text-base"><strong>CGPA</strong>: 3.83</p>
+        <section id="education" class="container mx-auto px-6 py-16">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-12">My Educational Journey</h2>
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-blue-500 transform hover:scale-[1.01] transition duration-300 ease-in-out">
+                <h3 class="font-extrabold text-2xl text-blue-700">Bangladesh University of Business and Technology (BUBT)</h3>
+                <p class="text-gray-700 text-lg">Mirpur 02, Dhaka</p>
+                <p class="font-semibold text-xl text-blue-600 mt-2">B.Sc. in Computer Science and Engineering (CSE)</p>
+                <p class="text-gray-600 text-base">June 2017 – August 2021</p>
+                <p class="text-gray-600 text-base"><strong>CGPA</strong>: 3.83</p>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-teal-700 transform hover:scale-[1.01] transition duration-300 ease-in-out animation-slide-up">
-            <h2 class="text-4xl font-bold text-teal-400 mb-10 text-center">Experience</h2>
+        <section id="experience" class="container mx-auto px-6 py-16">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-12">Professional Experience</h2>
             <div class="space-y-12">
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-teal-500 transform hover:scale-[1.02] transition duration-300">
-                    <h3 class="font-extrabold text-2xl text-white">Exabyting</h3>
-                    <p class="font-semibold text-xl text-teal-300">Software Engineer (Frontend)</p>
-                    <p class="text-gray-300 text-lg">Dhaka-1212, Bangladesh</p>
-                    <p class="text-gray-400 text-base">Oct 01, 2023 – Present</p>
-                    <ul class="list-disc list-inside mt-4 text-lg text-gray-300 space-y-2">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-blue-500 transform hover:scale-[1.01] transition duration-300 ease-in-out">
+                    <h3 class="font-extrabold text-2xl text-blue-700">Exabyting</h3>
+                    <p class="font-semibold text-xl text-blue-600">Software Engineer (Frontend)</p>
+                    <p class="text-gray-700 text-lg">Dhaka-1212, Bangladesh</p>
+                    <p class="text-gray-600 text-base">Oct 01, 2023 – Present</p>
+                    <ul class="list-disc list-inside mt-4 text-lg text-gray-700 space-y-2">
                         <li>Built responsive features for bKash website using React.js, Laravel, and Next.js including:
-                            <ul class="list-circle list-inside ml-6 text-base space-y-1 text-gray-400">
+                            <ul class="list-circle list-inside ml-6 text-base space-y-1 text-gray-600">
                                 <li>bKash Map</li>
                                 <li>Education Fee Payment</li>
                                 <li>History section</li>
                             </ul>
                         </li>
-                        <li>Developed <strong class="text-teal-400">Flow Builder</strong> for Sogedes’ ai.fctry using React.js and Tailwind CSS</li>
-                        <li>Created Onboarding Analytics and Settings for <strong class="text-teal-400">Empatick</strong> using Next.js, CSS Modules, and Bootstrap</li>
+                        <li>Developed <strong class="text-blue-700">Flow Builder</strong> for Sogedes’ ai.fctry using React.js and Tailwind CSS</li>
+                        <li>Created Onboarding Analytics and Settings for <strong class="text-blue-700">Empatick</strong> using Next.js, CSS Modules, and Bootstrap</li>
                         <li>Optimized performance and fixed bugs across bKash Toll web app and CMS</li>
                     </ul>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-teal-500 transform hover:scale-[1.02] transition duration-300">
-                    <h3 class="font-extrabold text-2xl text-white">Prolific Info Tech</h3>
-                    <p class="font-semibold text-xl text-teal-300">Jr. Software Engineer (Frontend)</p>
-                    <p class="text-gray-300 text-lg">Dhaka-1212, Bangladesh</p>
-                    <p class="text-gray-400 text-base">Dec 01, 2021 – June 06, 2023</p>
-                    <ul class="list-disc list-inside mt-4 text-lg text-gray-300 space-y-2">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-blue-500 transform hover:scale-[1.01] transition duration-300 ease-in-out">
+                    <h3 class="font-extrabold text-2xl text-blue-700">Prolific Info Tech</h3>
+                    <p class="font-semibold text-xl text-blue-600">Jr. Software Engineer (Frontend)</p>
+                    <p class="text-gray-700 text-lg">Dhaka-1212, Bangladesh</p>
+                    <p class="text-gray-600 text-base">Dec 01, 2021 – June 06, 2023</p>
+                    <ul class="list-disc list-inside mt-4 text-lg text-gray-700 space-y-2">
                         <li>Developed responsive web apps using React.js, Vue.js, and Next.js</li>
-                        <li>At <strong class="text-teal-400">QuestionPro</strong>, built TypeScript-based CX components and tested with Jest & React Testing Library</li>
+                        <li>At <strong class="text-blue-700">QuestionPro</strong>, built TypeScript-based CX components and tested with Jest & React Testing Library</li>
                         <li>Collaborated with cross-functional teams for successful project launches</li>
                     </ul>
                 </div>
@@ -167,20 +185,20 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-teal-700 transform hover:scale-[1.01] transition duration-300 ease-in-out animation-slide-up">
-            <h2 class="text-4xl font-bold text-teal-400 mb-10 text-center">Projects</h2>
+        <section id="projects" class="container mx-auto px-6 py-16">
+            <h2 class="text-4xl font-bold text-center text-blue-700 mb-12">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- bKash Website -->
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-teal-500 transform hover:scale-[1.02]">
-                    <h3 class="font-extrabold text-2xl text-white mb-3">bKash Website</h3>
-                    <p class="text-gray-300 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Laravel</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React.js</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">TypeScript</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React Query</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React Signal</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React Leaflet</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Bootstrap</span></p>
-                    <a href="https://www.bkash.com/en" target="_blank" class="text-teal-400 hover:text-teal-300 transition duration-300 font-semibold flex items-center mb-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-blue-400 transform hover:scale-[1.02]">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-3">bKash Website</h3>
+                    <p class="text-gray-600 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Laravel</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React.js</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">TypeScript</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React Query</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React Signal</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React Leaflet</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Bootstrap</span></p>
+                    <a href="https://www.bkash.com/en" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold flex items-center mb-4">
                         Preview: bKash <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
-                    <ul class="list-disc list-inside mt-auto text-lg text-gray-300 space-y-1">
+                    <ul class="list-disc list-inside mt-auto text-lg text-gray-700 space-y-1">
                         <li>Enhanced user experience for 70+ million users</li>
                         <li>Key features:
-                            <ul class="list-circle list-inside ml-6 text-base space-y-0.5 text-gray-400">
+                            <ul class="list-circle list-inside ml-6 text-base space-y-0.5 text-gray-600">
                                 <li>Agent, merchant, and ATM booth locator</li>
                                 <li>Education Fee Payment for 1000+ institutions</li>
                                 <li>History page</li>
@@ -190,74 +208,74 @@
                     </ul>
                 </div>
                 <!-- Sogedes – Flow Builder -->
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-teal-500 transform hover:scale-[1.02]">
-                    <h3 class="font-extrabold text-2xl text-white mb-3">Sogedes – Flow Builder</h3>
-                    <p class="text-gray-300 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React.js</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React Flow</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Tailwind CSS</span></p>
-                    <a href="https://factory.sogedes.ai/" target="_blank" class="text-teal-400 hover:text-teal-300 transition duration-300 font-semibold flex items-center mb-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-blue-400 transform hover:scale-[1.02]">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-3">Sogedes – Flow Builder</h3>
+                    <p class="text-gray-600 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React.js</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React Flow</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Tailwind CSS</span></p>
+                    <a href="https://factory.sogedes.ai/" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold flex items-center mb-4">
                         Preview: ai.fctry <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
-                    <ul class="list-disc list-inside mt-auto text-lg text-gray-300 space-y-1">
+                    <ul class="list-disc list-inside mt-auto text-lg text-gray-700 space-y-1">
                         <li>Drag-and-drop workflow builder for conversational AI platforms</li>
                         <li>Real-time AI conversation design</li>
                     </ul>
                 </div>
                 <!-- Empatick -->
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-teal-500 transform hover:scale-[1.02]">
-                    <h3 class="font-extrabold text-2xl text-white mb-3">Empatick</h3>
-                    <p class="text-gray-300 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Next.js</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">CSS Modules</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Bootstrap</span></p>
-                    <a href="https://www.empatick.com/en" target="_blank" class="text-teal-400 hover:text-teal-300 transition duration-300 font-semibold flex items-center mb-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-blue-400 transform hover:scale-[1.02]">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-3">Empatick</h3>
+                    <p class="text-gray-600 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Next.js</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">CSS Modules</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Bootstrap</span></p>
+                    <a href="https://www.empatick.com/en" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold flex items-center mb-4">
                         Preview: empatick.com <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
-                    <ul class="list-disc list-inside mt-auto text-lg text-gray-300 space-y-1">
+                    <ul class="list-disc list-inside mt-auto text-lg text-gray-700 space-y-1">
                         <li>Onboarding analytics with emotion/responsiveness dashboards</li>
                         <li>Settings UI with toggle and FAQ upload</li>
                         <li>Employee Table with CSV bulk uploads</li>
                     </ul>
                 </div>
                 <!-- QuestionPro -->
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-teal-500 transform hover:scale-[1.02]">
-                    <h3 class="font-extrabold text-2xl text-white mb-3">QuestionPro</h3>
-                    <p class="text-gray-300 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React.js</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">TypeScript</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React Query</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Jest</span></p>
-                    <a href="https://www.questionpro.com/" target="_blank" class="text-teal-400 hover:text-teal-300 transition duration-300 font-semibold flex items-center mb-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-blue-400 transform hover:scale-[1.02]">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-3">QuestionPro</h3>
+                    <p class="text-gray-600 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React.js</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">TypeScript</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React Query</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Jest</span></p>
+                    <a href="https://www.questionpro.com/" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold flex items-center mb-4">
                         Preview: questionpro.com <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
-                    <ul class="list-disc list-inside mt-auto text-lg text-gray-300 space-y-1">
+                    <ul class="list-disc list-inside mt-auto text-lg text-gray-700 space-y-1">
                         <li>Response-based ticketing system for managing feedback</li>
                         <li>Reusable components and tested with Jest</li>
                     </ul>
                 </div>
                 <!-- CasaBeauMonde -->
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-teal-500 transform hover:scale-[1.02]">
-                    <h3 class="font-extrabold text-2xl text-white mb-3">CasaBeauMonde</h3>
-                    <p class="text-gray-300 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Nuxt.js</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Capacitor.js</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Quasar</span></p>
-                    <a href="https://casabeaumonde.com" target="_blank" class="text-teal-400 hover:text-teal-300 transition duration-300 font-semibold flex items-center mb-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-blue-400 transform hover:scale-[1.02]">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-3">CasaBeauMonde</h3>
+                    <p class="text-gray-600 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Nuxt.js</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Capacitor.js</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Quasar</span></p>
+                    <a href="https://casabeaumonde.com" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold flex items-center mb-4">
                         Preview: casabeaumonde.com <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
-                    <ul class="list-disc list-inside mt-auto text-lg text-gray-300 space-y-1">
+                    <ul class="list-disc list-inside mt-auto text-lg text-gray-700 space-y-1">
                         <li>Multi-vendor e-commerce site for women’s clothing</li>
                         <li>Converted from Bootstrap for speed and mobile compatibility</li>
                     </ul>
                 </div>
                 <!-- Biziary -->
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-teal-500 transform hover:scale-[1.02]">
-                    <h3 class="font-extrabold text-2xl text-white mb-3">Biziary</h3>
-                    <p class="text-gray-300 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">React.js</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Chakra UI</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Redux</span></p>
-                    <a href="http://www.biziary.com" target="_blank" class="text-teal-400 hover:text-teal-300 transition duration-300 font-semibold flex items-center mb-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-blue-400 transform hover:scale-[1.02]">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-3">Biziary</h3>
+                    <p class="text-gray-600 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">React.js</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Chakra UI</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Redux</span></p>
+                    <a href="http://www.biziary.com" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold flex items-center mb-4">
                         Preview: biziary.com <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
-                    <ul class="list-disc list-inside mt-auto text-lg text-gray-300 space-y-1">
+                    <ul class="list-disc list-inside mt-auto text-lg text-gray-700 space-y-1">
                         <li>Business directory with admin and user panel</li>
                         <li>Features: Search, review, listing across cities</li>
                     </ul>
                 </div>
                 <!-- ShipSimple -->
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-teal-500 transform hover:scale-[1.02]">
-                    <h3 class="font-extrabold text-2xl text-white mb-3">ShipSimple</h3>
-                    <p class="text-gray-300 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Next.js</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Flowbite</span>, <span class="font-mono text-sm bg-gray-700 text-teal-300 px-2 py-1 rounded">Redux Toolkit</span></p>
-                    <a href="https://shipsimple.ca" target="_blank" class="text-teal-400 hover:text-teal-300 transition duration-300 font-semibold flex items-center mb-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-in-out hover:border-blue-400 transform hover:scale-[1.02]">
+                    <h3 class="font-extrabold text-2xl text-blue-700 mb-3">ShipSimple</h3>
+                    <p class="text-gray-600 mb-3"><strong>Tech</strong>: <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Next.js</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Flowbite</span>, <span class="font-mono text-sm bg-gray-100 text-blue-800 px-2 py-1 rounded">Redux Toolkit</span></p>
+                    <a href="https://shipsimple.ca" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold flex items-center mb-4">
                         Preview: shipsimple.ca <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
-                    <ul class="list-disc list-inside mt-auto text-lg text-gray-300 space-y-1">
+                    <ul class="list-disc list-inside mt-auto text-lg text-gray-700 space-y-1">
                         <li>Courier-based shipping solution</li>
                         <li>Responsive design and page conversion</li>
                         <li>Fixed frontend issues for better operation</li>
@@ -267,7 +285,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-950 text-gray-400 p-8 text-center mt-12 border-t border-gray-800">
+    <footer class="bg-gray-900 text-gray-300 p-8 text-center mt-12 border-t border-gray-700">
         <p>&copy; <span id="current-year"></span> Farhan Galib. All rights reserved.</p>
     </footer>
 
